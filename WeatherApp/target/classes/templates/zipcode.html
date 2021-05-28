@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container my-2">
+  <div class="card">
+    <div class="card-body">
+      <div th:switch="${zipcodes}" class="container my-5">
+        <div class="col-md-10">
+          <h2 th:case="null">No Search yet!</h2>
+          <div th:case="*">
+            <table class="table table-striped table-responsive-md">
+              <thead>
+              <tr>
+                <th>Zipcode</th>
+
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="zipcode : ${zipcodes}">
+                <td th:text="${zipcode.zipcode}"></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
